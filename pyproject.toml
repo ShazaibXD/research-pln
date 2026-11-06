@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pln"
+version = "0.0.1"
+description = "Predictive Learning Network: research code for higher-order cross-domain competency discovery"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.24", "torch>=2.0", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["pln*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = ["synthetic: uses synthetic data only; results say nothing about real learners"]
