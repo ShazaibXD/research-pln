@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+checkpoints/*.pt
+data/raw/
+data/intermediate/
+.DS_Store

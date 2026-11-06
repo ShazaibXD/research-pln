@@ -1,0 +1,21 @@
+[PASS] C1 Moebius inversion recovers coefficients: max|m_rec-m|=8.88e-16, max|m_rec(|T|>k)|=4.44e-16
+[PASS] C2 f(S) = b + sum_j f_j(S) exactly: max abs error 3.55e-15
+[PASS] C3 Shapley + pair interaction index from Moebius: max err Shapley=4.44e-16, pair-interaction=7.77e-16
+[PASS] C4 E[f(X)] = f(mu) (multilinear extension): enumerated 0.84376733 vs f(mu) 0.84376733
+[PASS] C4 Var[f(X)] closed form (Efron-Stein on multilinear f): enumerated 2.59594979 vs formula 2.59594979; by order j=1:1.8788, j=2:0.6631, j=3:0.0541
+[PASS] C5 AND3 residual under order<=2 fit > 0; order-3 fit exact: p=0.2: Var=0.0079, resid(k=2)=0.0041 (51.6%), resid(k=3)=9.2e-34 | p=0.5: Var=0.1094, resid(k=2)=0.0156 (14.3%), resid(k=3)=4.7e-32 | p=0.8: Var=0.2499, resid(k=2)=0.0041 (1.6%), resid(k=3)=1.0e-31
+[PASS] C5b order-2 refit puts mass on lower orders (truncation != refit): true lower-order Moebius coefficients are 0; refit max |coef| = 0.500
+[PASS] C6 CP coefficients: ANOVA DP = brute-force subset sum: max abs error 4.44e-16 (cost O(|S| k R) vs O(C(|S|,<=k) k R))
+[PASS] C7 marginal gain f(A+i)-f(A) = sum_{T subset A} m(T+i): max err 1.67e-15
+[PASS] C7b all m(T) >= 0 implies monotone: exhaustive over n=5
+[PASS] C7c motifs: conjunctive / redundant / complementary: AND3 gives 0 unless all 3 present; substitutes saturate at 1.0; complement pair 0+0 -> 1.5
+[PASS] C7d marginal completion value identifies the missing skill: gain(add skill 2)=2.0
+[PASS] C8 unbiased PU risk matches PN risk; unknown-as-negative does not: true=0.4284, PU=0.4283 (|bias|=0.0001), unknown-as-negative=0.6156 (|bias|=0.1872)
+[PASS] C9 cross-domain integration share (toy): share=0.5357
+[PASS] C10 monomial counts sum_{j<=k} C(n,j): n=6: k=1:6, k=2:21, k=3:41, k=4:56 | n=10: k=1:10, k=2:55, k=3:175, k=4:385 | n=15: k=1:15, k=2:120, k=3:575, k=4:1940 | full 2^n for n=15: 32768
+    f(S) by set: {'000': -3.0, '001': -2.7, '010': -2.8, '011': -2.1, '100': -2.9, '101': -2.5, '110': -2.5, '111': -0.2}
+    order parts for S={0,1,2}: F1=0.60, F2=0.70, F3=1.50
+    mastery mu=[0.9, 0.8, 0.5]: f(mu)=-1.5670, Var f(X)=1.1028, exact E[sigmoid f(X)]=0.2202, probit approx=0.2127, naive sigmoid(f(mu))=0.1726
+[PASS] C11 worked example is self-consistent: E[f(X)]=-1.5670 equals f(mu)=-1.5670; probit approx error 0.0075
+
+16/16 checks passed
